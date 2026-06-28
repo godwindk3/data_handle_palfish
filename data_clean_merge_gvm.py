@@ -43,12 +43,15 @@ import pandas as pd
 df1 = pd.read_csv("./raw_data/HCM REV_filtered_2026_5.csv", encoding="utf-8")
 df2 = pd.read_csv("./raw_data/SM Hanoi_filtered_2026_5.csv", encoding="utf-8")
 
+# Thêm cột TEAM cho df1
+df1["TEAM"] = "HCM"
+
 # Gộp theo hàng
 merged = pd.concat([df1, df2], ignore_index=True)
 
 # Xuất file
 merged.to_csv(
-    "./raw_data/SM_HN_HCM_REVfiltered_2026_5.csv",
+    "./raw_data/SM_HN_HCM_REV_filtered_2026_5.csv",
     index=False,
     encoding="utf-8-sig"
 )
